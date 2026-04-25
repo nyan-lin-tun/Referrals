@@ -5,9 +5,6 @@ struct Home: StaticPage {
     var title = "Nyan's Referrals"
 
     var body: some HTML {
-        Text("Nyan's Referrals")
-            .font(.title1)
-
         List {
             Link("Google AI Pro", target: "https://g.co/g1referral/CKL6SHJK")
                 .target(.blank)
