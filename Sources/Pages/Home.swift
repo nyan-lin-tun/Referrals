@@ -19,6 +19,9 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Revolut", target: "https://revolut.com/referral/?referral-code=nyanu2efp!JUN2-25-AR&geo-redirect")
                 .target(.blank)
+            Link("Syfe", target: "https://www.syfe.com/invite/trade/SRPS2ETNU")
+                .target(.blank)
         }
+        .class("referral-list")
     }
 }
