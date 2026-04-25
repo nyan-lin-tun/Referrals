@@ -18,6 +18,8 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Syfe", target: "https://www.syfe.com/invite/trade/SRPS2ETNU")
                 .target(.blank)
+            Link("Robinhood", target: "https://join.robinhood.com/eu_crypto/nyanl-c20aacd4/")
+                .target(.blank)
             Link("StashAway", target: "https://www.stashaway.sg/referrals/a7274688")
                 .target(.blank)
             Link("Tiger Trade", target: "https://tigr.link/s/60Fd6X6")
