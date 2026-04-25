@@ -15,8 +15,8 @@ struct IgniteWebsite {
 }
 
 struct ReferralsSite: Site {
-    var name = "Referrals"
-    var titleSuffix = " – Nyan Lin Tun"
+    var name = "Nyan's Referrals"
+    var titleSuffix = ""
     var url = URL(static: "https://nyanlintun.me/Referrals")
     var builtInIconsEnabled = true
     var author = "Nyan Lin Tun"

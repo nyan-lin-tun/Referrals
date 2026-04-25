@@ -2,10 +2,10 @@ import Foundation
 import Ignite
 
 struct Home: StaticPage {
-    var title = "Referrals"
+    var title = "Nyan's Referrals"
 
     var body: some HTML {
-        Text("Referral Links")
+        Text("Nyan's Referrals")
             .font(.title1)
 
         List {
