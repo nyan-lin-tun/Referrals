@@ -21,6 +21,7 @@ struct MainLayout: Layout {
         Body {
             NavigationBar(logo: Link("Nyan Lin Tun", target: "https://nyanlintun.me"))
                 .navigationBarStyle(.dark)
+                .class("bg-dark")
             content
             IgniteFooter()
         }
