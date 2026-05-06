@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ignite build *)",
+      "Bash(git -C /Users/nyanlintun/projects/Referrals status)",
+      "Bash(git -C /Users/nyanlintun/projects/Referrals diff --stat)",
+      "Bash(mkdir -p /Users/nyanlintun/projects/Referrals/.claude/skills)",
+      "Bash(mv /Users/nyanlintun/projects/Referrals/.claude/commands/push.md /Users/nyanlintun/projects/Referrals/.claude/skills/push.md)",
+      "Bash(rmdir /Users/nyanlintun/projects/Referrals/.claude/commands)",
+      "Bash(git -C /Users/nyanlintun/projects/Referrals add Build/index.html .claude/)",
+      "Bash(git -C /Users/nyanlintun/projects/Referrals commit -m ' *)",
+      "Bash(git -C /Users/nyanlintun/projects/Referrals push)"
+    ]
+  }
+}
