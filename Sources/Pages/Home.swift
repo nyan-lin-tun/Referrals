@@ -26,6 +26,14 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("moomoo", target: "https://j.moomoo.com/0Be7On")
                 .target(.blank)
+            Link("Genome", target: "https://my.genome.eu/r/xxBFWun8tD")
+                .target(.blank)
+            Link("Instarem", target: "https://referral-link.onelink.me/gbf1/a43c48ca?deep_link_sub1=referral&deep_link_value=kiq3PY")
+                .target(.blank)
+            Link("Grey", target: "https://greyapp.page.link/jixhVD5wH6mdykEY7")
+                .target(.blank)
+            Link("Hevn", target: "https://app.gethevn.com?ref=NY92C68E")
+                .target(.blank)
         }
         .class("referral-list")
     }
