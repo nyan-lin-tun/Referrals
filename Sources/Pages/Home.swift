@@ -34,6 +34,8 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Hevn", target: "https://app.gethevn.com?ref=NY92C68E")
                 .target(.blank)
+            Link("NordVPN", target: "https://refer-nordvpn.com/niXeEbnaBDY")
+                .target(.blank)
         }
         .class("referral-list")
     }
