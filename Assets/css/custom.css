@@ -1,3 +1,29 @@
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: var(--bs-dark);
+}
+
+.ig-main-content {
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+}
+
 .referral-list li {
     padding: 0.75rem 0;
+}
+
+.referral-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #adb5bd;
+    margin-top: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.referral-heading:first-child {
+    margin-top: 0;
 }
