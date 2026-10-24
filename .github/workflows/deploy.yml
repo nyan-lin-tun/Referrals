@@ -1,33 +1,58 @@
-name: Deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install Ignite with Homebrew
+        run: |
+          brew install nyan-lin-tun/tap/ignite-swift
+          "$(brew --prefix ignite-swift)/bin/ignite" --help
+
+      - name: Build site
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf Build
+          "$(brew --prefix ignite-swift)/bin/ignite" build | tee "$RUNNER_TEMP/ignite-build.log"
+          # Ignite can exit successfully after a build error, so also check its output.
+          grep -Fq '✅ Successfully built!' "$RUNNER_TEMP/ignite-build.log"
+          test -s Build/index.html
+
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v5
         with:
           path: Build
 
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
