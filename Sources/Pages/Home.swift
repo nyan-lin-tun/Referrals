@@ -62,6 +62,8 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Warp", target: "https://app.warp.dev/referral/7P3R93")
                 .target(.blank)
+            Link("Dia Browser", target: "https://diabrowser.com/invite/EJUM48")
+                .target(.blank)
         }
         .class("referral-list")
     }
