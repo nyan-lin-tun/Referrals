@@ -64,6 +64,8 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Dia Browser", target: "https://diabrowser.com/invite/EJUM48")
                 .target(.blank)
+            Link("Wabi", target: "https://wabi.ai/@nyanlintun")
+                .target(.blank)
         }
         .class("referral-list")
     }
