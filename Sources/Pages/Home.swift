@@ -66,6 +66,8 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Wabi", target: "https://wabi.ai/@nyanlintun")
                 .target(.blank)
+            Link("Instinct", target: "https://app.instinct.com/invite?t=4itp4mslpeeqj7ocaqogm557kq")
+                .target(.blank)
         }
         .class("referral-list")
     }
