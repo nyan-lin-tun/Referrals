@@ -23,18 +23,12 @@ jobs:
 
       - name: Install Ignite with Homebrew
         run: |
-          brew install nyan-lin-tun/tap/ignite-swift
-          "$(brew --prefix ignite-swift)/bin/ignite" --help
+          brew install ignite-swift/ignite/ignite-swift
+          "$(brew --prefix ignite-swift/ignite/ignite-swift)/bin/ignite" --help
 
       - name: Build site
         shell: bash
-        run: |
-          set -euo pipefail
-          rm -rf Build
-          "$(brew --prefix ignite-swift)/bin/ignite" build | tee "$RUNNER_TEMP/ignite-build.log"
-          # Ignite can exit successfully after a build error, so also check its output.
-          grep -Fq '✅ Successfully built!' "$RUNNER_TEMP/ignite-build.log"
-          test -s Build/index.html
+        run: ./scripts/build.sh
 
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
