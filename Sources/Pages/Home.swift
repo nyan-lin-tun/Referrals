@@ -62,6 +62,12 @@ struct Home: StaticPage {
                 .target(.blank)
             Link("Warp", target: "https://app.warp.dev/referral/7P3R93")
                 .target(.blank)
+            Link("Dia Browser", target: "https://diabrowser.com/invite/EJUM48")
+                .target(.blank)
+            Link("Wabi", target: "https://wabi.ai/@nyanlintun")
+                .target(.blank)
+            Link("Instinct", target: "https://app.instinct.com/invite?t=4itp4mslpeeqj7ocaqogm557kq")
+                .target(.blank)
         }
         .class("referral-list")
     }
