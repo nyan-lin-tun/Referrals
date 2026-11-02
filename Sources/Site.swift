@@ -3,14 +3,11 @@ import Ignite
 
 @main
 struct IgniteWebsite {
-    static func main() async {
-        var site = ReferralsSite()
+    static func main() async throws {
+        let categories = try ReferralCategory.load()
+        var site = ReferralsSite(homePage: Home(categories: categories))
 
-        do {
-            try await site.publish()
-        } catch {
-            print(error.localizedDescription)
-        }
+        try await site.publish()
     }
 }
 
@@ -21,6 +18,6 @@ struct ReferralsSite: Site {
     var builtInIconsEnabled = true
     var author = "Nyan Lin Tun"
 
-    var homePage = Home()
+    var homePage: Home
     var layout = MainLayout()
 }
